@@ -18,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/dr3.ico" sizes="any" />
+        <link rel="icon" href="/dr3.ico" sizes="any" type="image/x-icon" />
+        <link rel="shortcut icon" href="/dr3.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/dr3.ico" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
