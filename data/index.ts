@@ -1,6 +1,6 @@
 import { link } from "fs";
-// import { FaPython, FaReact, FaNodeJs } from 'react-icons/fa';
-// import { SiTensorflow, SiOpencv, SiPuppeteer, SiStripe, SiFirebase } from 'react-icons/si';
+import { FaPython, FaReact, FaNodeJs } from 'react-icons/fa';
+import { SiTensorflow, SiOpencv, SiPuppeteer, SiStripe, SiFirebase } from 'react-icons/si';
 
 
 export const navItems = [
