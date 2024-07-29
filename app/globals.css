@@ -1,75 +1,94 @@
-/* Tailwind CSS import */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-/* globals.css */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #0a192f;
-  color: #ffffff;
-  margin: 0;
-  padding: 0;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
 }
 
-.heading {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #64ffda;
-  text-align: center;
-  margin-bottom: 1rem;
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    @apply !scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button {
+    @apply active:outline-none;
+  }
 }
 
-.text-purple {
-  color: #aaffff;
-}
+@layer utilities {
+  .heading {
+    @apply font-bold text-4xl md:text-5xl text-center text-custom-color;
+  }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
+  .black-gradient {
+    background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
+  }
 
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-section {
-  padding: 4rem 2rem;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-button {
-  background-color: #64ffda;
-  color: #0a192f;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-button:hover {
-  background-color: #52e0b9;
-}
-
-.magic-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.spotlight {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.6;
+  .text-custom-color {
+    color: #a7b3ff;
+  }
 }
