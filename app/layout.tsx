@@ -33,24 +33,4 @@ export default function RootLayout({
     </html>
   );
 }
-
-// import './globals.css';
-// import { ReactNode } from 'react';
-
-// export const metadata = {
-//   title: "Daniel's Portfolio",
-//   description: 'Welcome to my Portfolio',
-// };
-
-// export default function RootLayout({ children }: { children: ReactNode }) {
-//   return (
-//     <html lang="en">
-//       <head>
-//         <link rel="icon" href="/dr3.png" sizes="any" />
-//       </head>
-//       <body>
-//         {children}
-//       </body>
-//     </html>
-//   );
-// }
+ 
