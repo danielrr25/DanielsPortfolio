@@ -1,10 +1,9 @@
 /* eslint-disable */
 
-
 "use client";
 import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
-import { cn } from "@/utils/cn";
+import clsx from "clsx";
 
 export const TextGenerateEffect = ({
   words,
@@ -48,7 +47,7 @@ export const TextGenerateEffect = ({
   };
 
   return (
-    <div className={cn("font-bold", className)}>
+    <div className={clsx("font-bold", className)}>
       <div className="my-4">
         <div className=" dark:text-white text-black  leading-snug tracking-wide">
           {renderWords()}
