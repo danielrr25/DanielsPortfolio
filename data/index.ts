@@ -81,7 +81,7 @@ export const navItems = [
       img: "/OCR.png",
       // iconLists: ["/python.svg", "/tensorflow.svg", "/yolov8.png"],
       // iconLists: ['python', 'tensorflow', 'opencv'],
-      link: "https://github.com/yourusername/ocr-project",
+      // link: "https://github.com/yourusername/ocr-project",
     },
     {
       id: 2,
@@ -90,17 +90,16 @@ export const navItems = [
       img: "/job-finder.png",
       // iconLists: ["/react.svg", "/puppeteer.svg", "/nodejs.svg"],
       // iconLists: ['react', 'puppeteer', 'nodejs'],
-      link: "https://github.com/yourusername/job-finder",
+      link: "https://github.com/danielrr25/Job-finder",
     },
     {
       id: 3,
-      title: "AI Image SaaS - Canva Application",
-      des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-      img: "/imaginify.png",
-      // iconLists: ["/react.svg", "/tensorflow.svg", "/stripe.svg"],
-      // iconLists: ['react', 'tensorflow', 'stripe'],
-      link: "https://github.com/yourusername/ai-image-saas",
+      title: "Joury Ice Cream Cafe Oviedo",
+      des: "Developed a responsive website and custom ordering system for Joury Ice Cream Cafe Oviedo.",
+      img: "/joury-ice-cream.png",  // Make sure this image exists in your public folder
+      link: "https://jouryicecream.com/",  
     },
+
     {
       id: 4,
       title: "Event Management App",
@@ -108,7 +107,7 @@ export const navItems = [
       img: "/popout.png",
       // iconLists: ["/react.svg", "/firebase.svg", "/nodejs.svg"],
       // iconLists: ['react', 'firebase', 'nodejs'],
-      link: "https://github.com/yourusername/event-management-app",
+      link: "https://github.com/danielrr25/event-management-app",
     },
   ];
   
