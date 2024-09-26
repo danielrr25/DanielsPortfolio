@@ -32,10 +32,10 @@ const Hero = () => {
       <div className="flex justify-center relative my-5 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <div className="flex flex-row items-center mb-10">
-            <h1 className="uppercase tracking-widest text-5xl text-center mr-2 text-custom-color">
+            <h1 className="uppercase tracking-widest text-4xl text-center mr-2 text-custom-color">
               Daniel
             </h1>
-            <h1 className="uppercase tracking-widest text-5xl text-center text-custom-color">
+            <h1 className="uppercase tracking-widest text-4xl text-center text-custom-color">
               Rodriguez
             </h1>
           </div>
