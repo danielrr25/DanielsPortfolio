@@ -109,6 +109,14 @@ export const navItems = [
       // iconLists: ['react', 'firebase', 'nodejs'],
       link: "https://github.com/danielrr25/event-management-app",
     },
+    {
+      id: 5, // Ensure this ID is unique and follows your existing sequence
+      title: "My Contact List",
+      des: "A simple contact list application to manage and store your friends' information.",
+      img: "/my-contact-list.png", // Make sure to replace this with the actual image path
+      link: "https://github.com/yourusername/my-contact-list", // Add the actual link to your project
+    },
+    
   ];
   
   
