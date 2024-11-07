@@ -114,7 +114,8 @@ export const navItems = [
       title: "My Contact List",
       des: "A simple contact list application to manage and store your friends' information.",
       img: "/my-contact-list.png", // Make sure to replace this with the actual image path
-      link: "https://github.com/danielrr25/ContactList", // Add the actual link to your project
+      //link: "https://github.com/danielrr25/ContactList", // Add the actual link to your project
+      link: "18.218.207.244:5000",
     },
     
   ];
