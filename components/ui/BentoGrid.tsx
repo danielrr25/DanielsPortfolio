@@ -1,12 +1,58 @@
 'use client';
 
 import { cn } from "@/utils/cn";
-import GridGlobe from "./GridGlobe"; // Make sure this path is correct
+
 
 import { IoCopyOutline } from "react-icons/io5"; // Import icon if needed
 import { useState } from "react";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import MagicButton from "../MagicButton";
+import { education, techStack, whatIBuild } from "@/data";
+import { motion, useReducedMotion } from "framer-motion";
+
+// One tech stack pill: breathes in a slow wave, lifts on hover, bounces on click
+const TechPill = ({ name, index }: { name: string; index: number }) => {
+  const reduceMotion = useReducedMotion();
+  const row = Math.floor(index / 2);
+
+  return (
+    <motion.button
+      type="button"
+      className="py-2 px-4 text-xs lg:text-base rounded-lg text-center bg-[#10132E] text-[#C1C2D3] border border-transparent cursor-pointer select-none"
+      animate={
+        reduceMotion
+          ? undefined
+          : {
+              boxShadow: [
+                "0 0 0px rgba(203,172,249,0)",
+                "0 0 14px rgba(203,172,249,0.35)",
+                "0 0 0px rgba(203,172,249,0)",
+              ],
+              borderColor: [
+                "rgba(203,172,249,0)",
+                "rgba(203,172,249,0.4)",
+                "rgba(203,172,249,0)",
+              ],
+            }
+      }
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        delay: row * 0.25 + (index % 2) * 0.12,
+        ease: "easeInOut",
+      }}
+      whileHover={{
+        scale: 1.07,
+        y: -2,
+        backgroundColor: "#1d2150",
+        color: "#ffffff",
+      }}
+      whileTap={{ scale: 0.9 }}
+    >
+      {name}
+    </motion.button>
+  );
+};
 
 export const BentoGrid = ({
   className,
@@ -18,7 +64,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-rows-6 gap-4 lg:gap-8 mx-auto",
+        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 lg:grid-rows-6 gap-4 lg:gap-8 mx-auto",
         className
       )}
     >
@@ -46,8 +92,6 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["Python", "ReactJS", "Typescript", "NextJS", "Java"];
-  const rightLists = ["VueJS", "MySQL", "JavaScript", "C", "MongoDB"];
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -61,10 +105,6 @@ export const BentoGridItem = ({
     <div
       className={cn(
         "relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 border-white/[0.1]",
-        {
-          'md:col-span-6 md:row-span-6 lg:col-span-3 lg:row-span-6': id === 1, // Make the first item larger
-          'md:col-span-3 md:row-span-3 lg:col-span-2 lg:row-span-3': id === 2,
-        },
         className
       )}
       style={{
@@ -108,21 +148,47 @@ export const BentoGridItem = ({
           <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10 mt-[-20px]">            
             {description}
           </div>
-          <div className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}>
+          <div className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10 text-white`}>
             {title}
           </div>
 
-          {id === 2 && <GridGlobe />}
+          {id === 4 && (
+            <div className="flex flex-col gap-4 mt-3 z-10">
+              {education.map((item) => (
+                <div key={item.school}>
+                  <p className="text-white font-bold text-base lg:text-lg">
+                    {item.school}
+                  </p>
+                  <p className="text-[#C1C2D3] text-sm lg:text-base">
+                    {item.degree}
+                  </p>
+                  <p className="text-[#8b8fb3] text-xs lg:text-sm">
+                    {item.dates}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {id === 2 && (
+            <div className="flex flex-col gap-5 mt-6 z-10">
+              {whatIBuild.map((item) => (
+                <div key={item.name} className="border-l-2 border-purple pl-4">
+                  <p className="text-white font-bold text-base lg:text-xl">
+                    {item.name}
+                  </p>
+                  <p className="text-[#C1C2D3] text-sm lg:text-base mt-1">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
 
           {id === 3 && (
             <div className="grid grid-cols-2 gap-2">
-              {leftLists.concat(rightLists).map((item, i) => (
-                <span
-                  key={i}
-                  className="py-2 px-4 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                >
-                  {item}
-                </span>
+              {techStack.map((item, i) => (
+                <TechPill key={item} name={item} index={i} />
               ))}
             </div>
           )}
@@ -130,7 +196,7 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="mt-5 relative">
               <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
+                title={copied ? "Email copied!" : "Copy my email"}
                 icon={<IoCopyOutline />}
                 position="left"
                 handleClick={handleCopy}

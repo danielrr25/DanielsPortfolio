@@ -1,20 +1,14 @@
-import { link } from "fs";
-import { FaPython, FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiTensorflow, SiOpencv, SiPuppeteer, SiStripe, SiFirebase } from 'react-icons/si';
-
-
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
-    // { name: "Testimonials", link: "#testimonials" },
     { name: "Contact", link: "#contact" },
   ];
   export const gridItems = [
     {
       id: 1,
-      title: "I prioritize client collaboration, fostering open communication ",
+      title: "Senior capstone sponsored by Siemens Energy",
       description: "",
-      className: "lg:col-span-3 md:col-span-2 md:row-span-2 lg:min-h-[50vh]",
+      className: "md:col-span-6 lg:col-span-3 lg:row-span-6 md:min-h-[30rem] lg:min-h-[50vh]",
       imgClassName: "w-full h-full",
       titleClassName: "justify-end mt-[-10px] text-sm ",
       img: "/siemens.jpg",
@@ -22,19 +16,18 @@ export const navItems = [
     },
     {
       id: 2,
-      title: "I'm very flexible with time zone communications",
+      title: "What I build",
       description: "",
-      className: "lg:col-span-2 lg:row-span-3 md:col-span-2 md:row-span-3",
+      className: "md:col-span-3 lg:col-span-2 lg:row-span-3",
       imgClassName: "",
       titleClassName: "justify-start",
       img: "",
       spareImg: "",
-      style: { gridRow: 'span 3 / auto' }, // Inline style for row span
     },
     {
       id: 3,
       title: "My tech stack",
-      className: "lg:col-span-2 lg:row-span-3 md:col-span-3 md:row-span-2",
+      className: "md:col-span-3 lg:col-span-2 lg:row-span-3",
       imgClassName: "",
       titleClassName: "justify-center",
       img: "",
@@ -42,19 +35,19 @@ export const navItems = [
     },
     {
       id: 4,
-      title: "Tech enthusiast with a passion for development.",
-      description: "",
-      className: "lg:col-span-2 lg:row-span-3 md:col-span-3 md:row-span-1",
+      title: "",
+      description: "Education",
+      className: "md:col-span-3 lg:col-span-2 lg:row-span-2",
       imgClassName: "",
       titleClassName: "justify-start",
       img: "/grid.svg",
-      spareImg: "/b4.svg",
+      spareImg: "",
     },
     {
       id: 5,
-      title: "Currently building a JS Animation library",
-      description: "The Inside Scoop",
-      className: "md:col-span-3 lg:row-span-3 md:row-span-2",
+      title: "Currently building FiestaGo",
+      description: "Right now",
+      className: "md:col-span-3 lg:col-span-3 lg:row-span-3",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
       titleClassName: "justify-center md:justify-start lg:justify-center",
       img: "/b5.svg",
@@ -62,162 +55,90 @@ export const navItems = [
     },
     {
       id: 6,
-      title: "Do you want to start a project together?",
+      title: "Want to talk fintech, trading systems, or ML?",
       description: "",
-      className: "lg:col-span-2 lg:row-span-1 md:col-span-3 md:row-span-1",
+      className: "md:col-span-6 lg:col-span-2 lg:row-span-1",
       imgClassName: "",
       titleClassName: "justify-center md:max-w-full max-w-60 text-center",
       img: "",
       spareImg: "",
     },
   ];
-  
-  
+
+  export const education = [
+    {
+      school: "Georgia Institute of Technology",
+      degree: "M.S. Computer Science",
+      dates: "Jan 2027 – 2029 (Expected)",
+    },
+    {
+      school: "University of Central Florida",
+      degree: "B.S. Computer Science · GPA 3.5",
+      dates: "Aug 2021 – May 2024",
+    },
+  ];
+
+  export const whatIBuild = [
+    { name: "Backends", desc: "APIs, payments, and webhooks, like FiestaGo's Stripe Connect bookings." },
+    { name: "Data systems", desc: "Oracle and PostgreSQL databases, and the tools that make them easy to use." },
+    { name: "Creative frontends", desc: "Next.js and React apps that are fun to use." },
+  ];
+
+  export const techStack = [
+    "Python", "TypeScript", "JavaScript", "Java", "SQL", "C/C++",
+    "Next.js", "React", "Node.js", "Flask",
+    "PostgreSQL", "Oracle", "MongoDB", "AWS", "Docker", "Git",
+  ];
+
   export const projects = [
     {
       id: 1,
-      title: "OCR Project - Turbine Components",
-      des: "Advanced analytical identification of industrial turbine components with 99.5% accuracy.",
-      img: "/OCR.png",
-      // iconLists: ["/python.svg", "/tensorflow.svg", "/yolov8.png"],
-      // iconLists: ['python', 'tensorflow', 'opencv'],
-      // link: "https://github.com/yourusername/ocr-project",
+      title: "FiestaGo: Event Services Marketplace",
+      des: "A marketplace for booking event vendors, with Stripe Connect payouts, webhook-driven bookings, refunds, and double-booking protection. My startup, built from scratch with Next.js, TypeScript, and PostgreSQL.",
+      img: "/fiestago.png",
+      link: "https://fiesta-go1-frontend.vercel.app",
+      linkLabel: "Live Site",
     },
     {
       id: 2,
-      title: "Job Finder - Job Scraping and Application",
-      des: "A job scraping and frontend application using Puppeteer for scraping job listings and React for the frontend.",
-      img: "/job-finder.png",
-      // iconLists: ["/react.svg", "/puppeteer.svg", "/nodejs.svg"],
-      // iconLists: ['react', 'puppeteer', 'nodejs'],
-      link: "https://github.com/danielrr25/Job-finder",
+      title: "Inquietum: Algorithmic Trading System",
+      des: "A modular Python trading system with separate strategy, risk, and exchange layers. It runs an SMA crossover strategy with position sizing and stop-losses, backtested on crypto data with vectorbt.",
+      img: "/inquietum.png",
+      link: "https://github.com/danielrr25/Inquietum",
+      linkLabel: "GitHub",
     },
     {
       id: 3,
-      title: "Joury Ice Cream Cafe Oviedo",
-      des: "Developed a responsive website and custom ordering system for Joury Ice Cream Cafe Oviedo.",
-      img: "/joury-ice-cream.png",  // Make sure this image exists in your public folder
-      link: "https://jouryicecream.com/",  
+      title: "Turbine OCR: Computer Vision for Siemens Energy",
+      des: "An iOS app that scans turbine serial numbers using a YOLOv8 model trained on a custom dataset, with 99.5% accuracy. Built as my senior capstone, sponsored by Siemens Energy.",
+      img: "/OCR.png",
     },
-
     {
       id: 4,
       title: "Event Management App",
-      des: "Created an event management app with features for scheduling, notifications, and user management.",
+      des: "A social events app built with a team of 5, with a Flutter frontend, MERN backend, and JWT authentication.",
       img: "/popout.png",
-      // iconLists: ["/react.svg", "/firebase.svg", "/nodejs.svg"],
-      // iconLists: ['react', 'firebase', 'nodejs'],
       link: "https://github.com/danielrr25/event-management-app",
-    },
-    {
-      id: 5, // Ensure this ID is unique and follows your existing sequence
-      title: "My Contact List",
-      des: "A simple contact list application to manage and store your friends' information.",
-      img: "/my-contact-list.png", // Make sure to replace this with the actual image path
-      link: "https://github.com/danielrr25/ContactList", // Add the actual link to your project
-      //link: "18.218.207.244:5000",
-    },
-    
-  ];
-  
-  
-  export const testimonials = [
-    {
-      quote:
-        "Collaborating with Daniel was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Daniel's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Daniel is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
-    },
-    {
-      quote:
-        "Collaborating with Daniel was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Daniel's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Daniel is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
-    },
-    {
-      quote:
-        "Collaborating with Daniel was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Daniel's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Daniel is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
-    },
-    {
-      quote:
-        "Collaborating with Daniel was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Daniel's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Daniel is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
-    },
-    {
-      quote:
-        "Collaborating with Daniel was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Daniel's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Daniel is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
+      linkLabel: "GitHub",
     },
   ];
-  
-  export const companies = [
+
+  // Smaller cards under the main projects
+  export const otherProjects = [
     {
       id: 1,
-      name: "cloudinary",
-      img: "/cloud.svg",
-      nameImg: "/cloudName.svg",
-    },
-    {
-      id: 2,
-      name: "appwrite",
-      img: "/app.svg",
-      nameImg: "/appName.svg",
-    },
-    {
-      id: 3,
-      name: "HOSTINGER",
-      img: "/host.svg",
-      nameImg: "/hostName.svg",
-    },
-    {
-      id: 4,
-      name: "stream",
-      img: "/s.svg",
-      nameImg: "/streamName.svg",
-    },
-    {
-      id: 5,
-      name: "docker.",
-      img: "/dock.svg",
-      nameImg: "/dockerName.svg",
+      title: "Job Finder",
+      des: "Scrapes job listings with Puppeteer and shows them in a React frontend.",
+      link: "https://github.com/danielrr25/Job-finder",
+      linkLabel: "GitHub",
     },
   ];
-  
-  export const workExperience = [
-    {
-      id: 1,
-      title: "Frontend Engineer Intern",
-      desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
-      className: "md:col-span-2",
-      thumbnail: "/exp1.svg",
-    },
-    {
-      id: 2,
-      title: "Mobile App Dev",
-      desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-      className: "md:col-span-2", // change to md:col-span-2
-      thumbnail: "/exp2.svg",
-    },
-    {
-      id: 3,
-      title: "Freelance App Dev Project",
-      desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-      className: "md:col-span-2", // change to md:col-span-2
-      thumbnail: "/exp3.svg",
-    },
-    {
-      id: 4,
-      title: "Lead Frontend Developer",
-      desc: "Developed and maintained user-facing features using modern frontend technologies.",
-      className: "md:col-span-2",
-      thumbnail: "/exp4.svg",
-    },
-  ];
-  
+
+  export const experience = {
+    now: "Solution Analyst at Deloitte, building database tools and keeping production systems running.",
+    previously: "Siemens Energy–sponsored capstone at UCF",
+  };
+
   export const socialMedia = [
     {
       id: 1,
@@ -226,11 +147,6 @@ export const navItems = [
     },
     {
       id: 2,
-      img: "/twit.svg",
-      link: "https://twitter.com/danielrr25",
-    },
-    {
-      id: 3,
       img: "/link.svg",
       link: "https://linkedin.com/in/daniel-rodriguez-549255206",
     },

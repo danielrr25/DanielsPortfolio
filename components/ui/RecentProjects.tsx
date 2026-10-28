@@ -1,6 +1,8 @@
 "use client";
 
-import { projects } from "@/data";
+import { FaLocationArrow } from "react-icons/fa6";
+
+import { otherProjects, projects } from "@/data";
 import { PinContainer } from "./3d-pin";
 
 const RecentProjects = () => {
@@ -10,14 +12,14 @@ const RecentProjects = () => {
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-x-16 gap-y-8 mt-10 max-w-5xl mx-auto">
         {projects.map((item) => (
           <div
             key={item.id}
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="h-[34rem] flex items-center justify-center sm:w-96 w-[80vw]"
           >
-            <PinContainer href={item.link}> {/* Pass link as href */}
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+            <PinContainer href={item.link} title={item.linkLabel}>
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-48 sm:h-56 mb-8">
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
@@ -26,17 +28,17 @@ const RecentProjects = () => {
                 </div>
                 <img
                   src={item.img}
-                  alt="cover"
+                  alt={item.title}
                   className="z-10 absolute bottom-0"
                 />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-2 text-white">
                 {item.title}
               </h1>
 
               <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                className="lg:text-base lg:font-normal font-light text-sm"
                 style={{
                   color: "#BEC1DD",
                   margin: "1vh 0",
@@ -45,20 +47,38 @@ const RecentProjects = () => {
                 {item.des}
               </p>
 
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {/* Icon rendering logic */}
-                </div>
-
-                <div className="flex justify-center items-center">
+              {item.link && (
+                <div className="flex justify-end items-center mt-5 mb-3">
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    
+                    {item.linkLabel}
                   </p>
-                  {/* <FaLocationArrow className="ms-3" color="#CBACF9" /> */}
+                  <FaLocationArrow className="ms-3" color="#CBACF9" />
                 </div>
-              </div>
+              )}
             </PinContainer>
           </div>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-6 mt-10 px-4">
+        {otherProjects.map((item) => (
+          <a
+            key={item.id}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sm:w-96 w-[80vw] p-6 rounded-2xl border border-white/[0.1] hover:border-white/[0.2] transition duration-300"
+            style={{ backgroundColor: "#04071D" }}
+          >
+            <h2 className="font-bold text-lg text-white">{item.title}</h2>
+            <p className="text-sm mt-2" style={{ color: "#BEC1DD" }}>
+              {item.des}
+            </p>
+            <div className="flex items-center mt-4 text-sm text-purple">
+              {item.linkLabel}
+              <FaLocationArrow className="ms-2" color="#CBACF9" size={12} />
+            </div>
+          </a>
         ))}
       </div>
     </div>

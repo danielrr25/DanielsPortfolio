@@ -1,9 +1,11 @@
+import colors from "tailwindcss/colors";
 import { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./data/**/*.{js,ts}",
   ],
   theme: {
     extend: {
@@ -27,6 +29,7 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        purple: { ...colors.purple, DEFAULT: "#a855f7" },
       },
       borderRadius: {
         DEFAULT: "var(--radius)",

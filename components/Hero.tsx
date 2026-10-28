@@ -32,23 +32,23 @@ const Hero = () => {
       <div className="flex justify-center relative my-5 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <div className="flex flex-row items-center mb-10">
-            <h1 className="uppercase tracking-widest text-4xl text-center mr-2 text-custom-color">
+            <h1 className="uppercase tracking-widest text-3xl md:text-4xl text-center mr-2 text-custom-color">
               Daniel
             </h1>
-            <h1 className="uppercase tracking-widest text-4xl text-center text-custom-color">
+            <h1 className="uppercase tracking-widest text-3xl md:text-4xl text-center text-custom-color">
               Rodriguez
             </h1>
           </div>
 
           <div className="mb-10">
             <TextGenerateEffect
-              words="Transforming Concepts into Seamless User Experiences"
+              words="Transforming Concepts into Real-World Applications"
               className="text-center text-[40px] md:text-4xl lg:text-5xl text-gray-800" // Changed color to dark gray
             />
           </div>
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl text-custom-color">
-            A recent computer science graduate student with experience in full-stack web development. My passion for programming is driven by a curiosity to solve real-world challenges and innovate with new ideas and websites.
+            A recent computer science graduate student with experience in full-stack web development, from backends and data systems to creative frontend applications. My passion for programming is driven by a curiosity to solve real-world challenges and innovate with new ideas and websites.
           </p>
 
           <a href="#about">

@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { FaLocationArrow, FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaLocationArrow, FaGithub, FaLinkedin } from "react-icons/fa";
 import MagicButton from "./MagicButton";
 
 const Footer = () => {
@@ -16,27 +16,29 @@ const Footer = () => {
 
       <div className="flex flex-col items-center relative z-10">
         <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
+          Want to build something or{" "}
+          <span className="text-purple">talk shop?</span>
         </h1>
         <p className="md:mt-10 my-5 text-center" style={{ color: '#9f7aea' }}>
-          Reach out to me today and let&apos;s discuss how I can help you achieve your goals.
+          I&apos;m always up for conversations about fintech, trading systems, and ML.
         </p>
 
-        <a href="mailto:danielrr25@gmail.com">
-          <MagicButton
-            title="Let&apos;s get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
-        <a href="Resume_DR.pdf" target="_blank" rel="noopener noreferrer">
-          <MagicButton
-            title="Resume"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
+        <div className="flex flex-col md:flex-row md:gap-6 gap-4 w-full md:w-auto">
+          <a href="mailto:danielrr25@gmail.com">
+            <MagicButton
+              title="Email me"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
+          </a>
+          <a href="/Resume_DR.pdf" target="_blank" rel="noopener noreferrer">
+            <MagicButton
+              title="Résumé"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
+          </a>
+        </div>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center relative z-10">
         <p className="md:text-base text-sm md:font-normal font-light text-black">
@@ -51,14 +53,6 @@ const Footer = () => {
             className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
           >
             <FaGithub size={20} className="text-indigo-600" />
-          </a>
-          <a
-            href="https://twitter.com/danielrr25"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-          >
-            <FaTwitter size={20} className="text-indigo-600" />
           </a>
           <a
             href="https://linkedin.com/in/daniel-rodriguez-549255206"
